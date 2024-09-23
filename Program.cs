@@ -39,6 +39,6 @@ if (sym is null)
     return 1;
 }
 
-Console.WriteLine($"restore_stack offset: 0x{file.Sections[sym.SegmentIndex].Offset + sym.Offset:x}");
+Console.WriteLine($"restore_stack offset: 0x{file.Sections[sym.SegmentIndex - 1].Rva + sym.Offset:x}");
 
 return 0;
